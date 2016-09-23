@@ -10,6 +10,6 @@ Test karma + jasmine:
 Test karma + mocha:   
 `npm run test:karma`
 
-Test protractor (open 2 terminals):
-1. `npm start`
-2. `npm run test:e2e`
+Test protractor (open 2 terminals):   
+1. `npm start`   
+2. `npm run test:e2e`   
