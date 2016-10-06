@@ -1,17 +1,15 @@
 <!DOCTYPE html>
-<html ng-app="todo">
+<html ng-app="flipFlop">
   <head>
     <meta charset="utf-8">
     <title></title>
     <script type="text/javascript" src="../node_modules/angular/angular.js"></script>
-    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="../node_modules/angular-route/angular-route.js"></script>
+    <script src="flipFlop.js"></script>
+    <script src="viewAController.js"></script>
+    <script src="viewBController.js"></script>
   </head>
   <body>
-    <div ng-controller="TodoController">
-      <ul ng-repeat="item in list">
-      <li>{{item}}</li>
-      </ul>
-    </div>
-    <button class="some-button">Click me</button>
+    <div ng-view></div>
   </body>
 </html>

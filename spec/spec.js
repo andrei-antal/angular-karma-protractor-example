@@ -1,12 +1,18 @@
-describe('The to do list',function(){
-  //ASSEMBLE
-  beforeEach(function(){
-  //ACT
-  browser.get('/app');
-  });
-  it('should have 3 items',function(){
-    var todoListItems = element.all(by.repeater('item in list'));
-    //ASSERT
-    expect(todoListItems.count()).toBe(3);
-  });
-});
+describe('Given a view A that has a single button', function(){
+  describe('When the button is pushed',function(){
+    var viewA = element(by.css('#viewA'));
+    var viewB = element(by.css('#viewB'));
+    beforeEach(function(){
+      browser.get('/app/');
+      expect(viewA.isPresent()).toBeTruthy();
+      var buttonToPush = element(by.linkText('flip'));
+      buttonToPush.click();
+    })
+    it('should be switched to view B',function(){
+      expect(viewB.isPresent()).toBeTruthy();
+    })
+    it('should not display view A',function(){
+      expect(viewA.isPresent()).toBeFalsy();
+    })
+  })
+})
