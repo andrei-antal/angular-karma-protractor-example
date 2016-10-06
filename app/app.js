@@ -1,9 +1,13 @@
-var app = angular.module('todo', [])
-//
-app.controller('TodoController',['$scope',function($scope){
-  $scope.list = [];
-  $scope.list = ['test','execute','refactor'];
-  $scope.add = function(item){
-    $scope.list.push(item);
-  };
-}])
+angular.module('comments', [])
+    .controller('CommentController',['$scope', function($scope){
+      $scope.comments = [];
+
+      $scope.add = function(commentToAdd){
+        var newComment = {value:commentToAdd,likes:0};
+        $scope.comments.unshift(newComment);
+      };
+
+      $scope.like = function(comment){
+        comment.likes++;
+      };
+    }])

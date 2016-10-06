@@ -1,17 +1,24 @@
 <!DOCTYPE html>
-<html ng-app="todo">
+<html>
   <head>
     <meta charset="utf-8">
     <title></title>
     <script type="text/javascript" src="../node_modules/angular/angular.js"></script>
-    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="./app.js"></script>
   </head>
-  <body>
-    <div ng-controller="TodoController">
-      <ul ng-repeat="item in list">
-      <li>{{item}}</li>
+  <body ng-app="comments">
+    <div ng-controller='CommentController'>
+      <input type='text' ng-model='newComment'/>
+      <button type='button' ng-click='add(newComment)'>Submit</button>
+      <ul ng-repeat='comment in comments'>
+        <li>
+          {{comment.value}}
+          <button type="button" ng-click='like(comment)'>like</button>
+          <span>
+            {{comment.likes}}
+          </span>
+        </li>
       </ul>
     </div>
-    <button class="some-button">Click me</button>
   </body>
 </html>

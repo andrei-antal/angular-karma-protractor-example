@@ -7,7 +7,7 @@
     "test": "karma start",
     "test:karma": "karma start karma.conf.mocha.js",
     "test:e2e": "protractor protractor.conf.js",
-    "start": "http-server -p 8080",
+    "start": "http-server -a localhost -p 8080",
     "postinstall": "./node_modules/protractor/bin/webdriver-manager update"
   },
   "author": "",
