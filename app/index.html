@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="todo">
+<html ng-app="product">
   <head>
     <meta charset="utf-8">
     <title></title>
@@ -7,11 +7,39 @@
     <script type="text/javascript" src="app.js"></script>
   </head>
   <body>
-    <div ng-controller="TodoController">
-      <ul ng-repeat="item in list">
-      <li>{{item}}</li>
+    <div class="search" ng-controller="SearchController">
+      <input type="text" />
+      <button ng-click="performSearch()" id="search">Search</button>
+      <ul>
+        <li ng-repeat="result in results" >
+          <span ng-click="viewDetails(result)">{{result.name}}</span>
+          <button ng-click="addToCart(result)">Add to cart</button>
+        </li>
       </ul>
     </div>
-    <button class="some-button">Click me</button>
+    <div class="details" ng-controller="DetailsController">
+      <div ng-if="product" id="productDetail">
+        Details: <br />
+        id: {{product.id}} <br />
+        name: {{product.name}}
+      </div>
+    </div>
+    <div class="recently-viewd" ng-controller="RecentlyViewedController">
+      Recently viewed:
+      <ul>
+        <li ng-repeat="viewedProduct in products" ng-click="viewDetails(viewedProduct)">
+          {{viewedProduct.name}}
+        </li>
+      </ul>
+    </div>
+    <div class="cart" ng-controller="CartController">
+      Cart:
+      <ul>
+        <li ng-repeat="cartProduct in products">
+          {{cartProduct.name}}
+          <button ng-click="remove(cartProduct)">remove</button>
+        </li>
+      </ul>
+    </div>
   </body>
 </html>

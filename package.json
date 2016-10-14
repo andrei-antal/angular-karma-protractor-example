@@ -7,7 +7,7 @@
     "test": "karma start",
     "test:karma": "karma start karma.conf.mocha.js",
     "test:e2e": "protractor protractor.conf.js",
-    "start": "http-server -p 8080",
+    "start": "watch-http-server -p 8080 -a 127.0.0.1",
     "postinstall": "./node_modules/protractor/bin/webdriver-manager update"
   },
   "author": "",
@@ -25,10 +25,12 @@
     "karma-mocha": "1.1.1",
     "karma-mocha-reporter": "2.2.0",
     "karma-sinon": "1.0.5",
+    "karma-spec-reporter": "0.0.26",
     "mocha": "3.0.2",
     "protractor": "4.0.9",
     "selenium-standalone-jar": "2.53.1",
-    "sinon": "1.17.6"
+    "sinon": "1.17.6",
+    "watch-http-server": "0.7.6"
   },
   "dependencies": {
     "angular": "1.5.8",
